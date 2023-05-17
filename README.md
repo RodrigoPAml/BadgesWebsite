@@ -1,6 +1,6 @@
 # Badges Website
 
-A website builded in NextJS with badge/certificate emission and quiz system
+A website builded in NextJS and MUI with badge/certificate emission and quiz system
 
 * Contains the administrative part
 * Quiz system to adquire badges
