@@ -39,7 +39,7 @@ In this page the user can edit it's info like name, linkedin page, photo and pro
 
 Here the user can access his unique profile URL where all his info like biography, contact info and badges appear.
 
-This page can be shared with any one
+This page can be shared with any one, like here https://certificados.eia.ai/perfil?key=victorthompson
 
 ![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/041560e9-abc1-4533-a238-8ffdad80f0b3)
 
