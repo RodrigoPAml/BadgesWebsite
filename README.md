@@ -1,6 +1,6 @@
 # Badges Website
 
-A website builded in NextJS and MUI with badge/certificate emission and quiz system
+A website builded in NextJS and MUI with badge/certificate emission and quiz system and available in https://certificados.eia.ai/
 
 * Contains the administrative part
 * Quiz system to adquire badges
@@ -11,9 +11,7 @@ A website builded in NextJS and MUI with badge/certificate emission and quiz sys
 
 The back-end part is private
 
-The website also works in mobile plataforms and cab be visited here https://certificados.eia.ai/
-
-![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/44d3359f-6589-409a-9531-6e57e0535bb0)
+![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/a474f2ab-ef64-43e5-98bc-fb071f502958)
 
 ## Main User Related Features
 
@@ -21,7 +19,7 @@ The website also works in mobile plataforms and cab be visited here https://cert
 
 Also contains the option to create a new account and recover password
 
-![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/7cd7a589-3e29-45bc-b393-603e50855f8c)
+![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/472ca1cf-113e-4611-9cce-bbf9dac65507)
 
 ### Badges page
 
@@ -29,13 +27,13 @@ This is the page where the user can manage its badges, copy a link to share it a
 
 In this page the user can also include an external badge or certificate to show into his profile
 
-![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/f2f798bd-16fe-42ba-95a5-f294e390fa53)
+![2](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/dda3075d-2773-49c3-b19d-e4d643fa9430)
 
 ### User edit page
 
 In this page the user can edit it's info like name, linkedin page, photo and profile url page
 
-![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/822b2a2f-c148-4f66-adea-bcd1338e4225)
+![1](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/b3b7e059-bb6c-4209-a63d-a073b77eb32f)
 
 ### User profile view
 
@@ -43,7 +41,7 @@ Here the user can access his unique profile URL where all his info like biograph
 
 This page can be shared with any one
 
-![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/8b8dcc70-d40e-4e6d-a8f2-4d130e2e0ef7)
+![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/041560e9-abc1-4533-a238-8ffdad80f0b3)
 
 ### Badge certificate page
 
@@ -51,19 +49,19 @@ This pages prove that a user have this badge, with his name, link to personal pa
 
 This page can also be shared via social media.
 
-![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/361716a9-67e9-4983-855e-e2f010986225)
+![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/be4a89d4-7173-48fc-917a-4aa72d597799)
 
 ### Social media share
 
-Example of shared badge preview in linkedin
+Example of shared badge preview in linkedin https://certificados.eia.ai/certificado?code=victorthompson4
 
-![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/1bdf8c9d-437c-4248-9e49-66a75ed308fa)
+![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/023041db-d01c-4003-9f54-6f4772cc7ce7)
 
 ### Mobile adaptations
 
 All the user part are adapted to mobile
 
-![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/d916cef6-10b1-4dab-91d0-06036a1b5a97)
+![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/fc04ab90-c2c5-41a5-9abb-da5a35403cca)
 
 ## Main Administrative Related Features
 
@@ -71,18 +69,10 @@ All the user part are adapted to mobile
 
 In this part its possible to manage all data from the website
 
-![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/f439eb37-622f-402f-b9b2-d1ae3bb9b07a)
-
 ### Example of badge admin page
 
 Badges manage page
 
-![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/f7155a6a-67a7-45c4-a469-152b5cdac9cd)
-
 ### Editing basge information
 
 Example of editing a badge
-
-![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/7bf29f4c-fcd3-4619-9098-2d05d2aa1902)
-
-
