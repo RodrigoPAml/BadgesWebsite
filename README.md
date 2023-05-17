@@ -57,6 +57,14 @@ Example of shared badge preview in linkedin https://certificados.eia.ai/certific
 
 ![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/023041db-d01c-4003-9f54-6f4772cc7ce7)
 
+### Adquire a badge via quiz
+
+![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/154a3a27-9748-4cef-86b6-6997046cd7f2)
+
+And the questions part
+
+![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/8eb3740b-4c6c-402d-aa8d-1c39c7522dc8)
+
 ### Mobile adaptations
 
 All the user part are adapted to mobile
@@ -69,10 +77,16 @@ All the user part are adapted to mobile
 
 In this part its possible to manage all data from the website
 
+![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/c95bab15-d453-4401-9445-0acdc534ebc4)
+
 ### Example of badge admin page
 
 Badges manage page
 
+![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/fe0b2279-4ce1-4fd7-91cf-cb692dbe94a1)
+
 ### Editing basge information
 
 Example of editing a badge
+
+![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/c05ffe80-1984-45e0-bf8d-2593f32928be)
