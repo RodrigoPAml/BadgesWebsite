@@ -85,7 +85,7 @@ Badges manage page
 
 ![image](https://github.com/RodrigoPAml/BadgesWebsite/assets/41243039/fe0b2279-4ce1-4fd7-91cf-cb692dbe94a1)
 
-### Editing basge information
+### Editing badge information
 
 Example of editing a badge
 
