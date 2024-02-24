@@ -6,6 +6,12 @@ const GetStore = [
     required: true
   },
   {
+    name: 'Email',
+    id: 'email',
+    value: '',
+    required: true
+  },
+  {
     name: 'Senha',
     id: 'password',
     value: '',

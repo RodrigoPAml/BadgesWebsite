@@ -56,8 +56,7 @@ function HelpContainer(props) {
           >
             <ErrorOutlineIcon color='info'></ErrorOutlineIcon>
             <Typography fontSize={{ lg: 14, md: 14, sm: 13, xs: 10 }} sx={{ ml: '10px' }} variant="h4">
-              Para Copiar e Compartilhar seu Badge nas Redes Sociais Clique em&nbsp;&nbsp;
-              <ShareIcon sx={{ fontSize: { lg: 15, md: 14, sm: 13, xs: 10 } }}></ShareIcon>
+              Para Copiar e Compartilhar seu Badge nas Redes Sociais Clique em "COPIAR LINK DE COMPARTILHAMENTO"
             </Typography>
           </Box>
           <Box sx={{ ml: '10px', mb: '5px', display: 'flex', flexDirection: 'row', alignContent: 'center', justifyItems: 'center', alignItems: 'center' }}>

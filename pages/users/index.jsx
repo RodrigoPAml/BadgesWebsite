@@ -72,6 +72,12 @@ class Users extends React.Component {
             {
               operation: '=',
               type: 'string',
+              field: 'email',
+              name: 'Email'
+            },
+            {
+              operation: '=',
+              type: 'string',
               field: 'login',
               name: 'Login'
             },

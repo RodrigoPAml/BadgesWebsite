@@ -51,7 +51,9 @@ class FormStore extends React.Component {
 
   isLoading = () => this.state.loading;
 
-  setLoading = (val) => this.setState({ loading: val })
+  setLoading = (val) => this.setState({...this.state, loading: val })
+
+  setLoadingWithAction = (val, action) => this.setState({...this.state, loading: val }, action)
 
   async submit() {
     if (get(this.state, 'endpoint', null) === null) {
@@ -105,11 +107,13 @@ class FormStore extends React.Component {
     return null
   }
 
-  validate() {
+  validate(warn = true) {
     const item = this.state.store.find(x => isEmpty(toString(get(x, 'value', ''))) && get(x, 'required', false) === true && get(x, 'id') !== 'id');
 
     if (item) {
-      window.snackbar.warn('Campo "' + get(item, 'name', '?') + '" é obrigátorio')
+      if(warn) {
+        window.snackbar.warn('Campo "' + get(item, 'name', '?') + '" é obrigátorio')
+      }
       return false;
     }
 
@@ -141,6 +145,18 @@ class FormStore extends React.Component {
     return null
   }
 
+  setField = (id, field, value) => {
+    const index = this.state.store.findIndex(x => x.id === id)
+
+    if (index !== -1) {
+      let store = this.state.store;
+      store[index][field] = value
+      this.setState({...this.state, store })
+    }
+
+    return null
+  }
+
   setValue = (id, value, hasChanged = true) => {
     const obj = { 'id': id, 'value': value }
     const index = this.state.store.findIndex(x => x.id === id)
@@ -154,7 +170,7 @@ class FormStore extends React.Component {
         'hasChanged': hasChanged,
       };
 
-      this.setState({ store })
+      this.setState({...this.state, store })
     }
     else {
       this.setState({

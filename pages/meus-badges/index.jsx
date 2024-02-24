@@ -114,22 +114,6 @@ class MyBadges extends React.Component {
               }
             },
             {
-              tooltip: 'Copiar Link de Compartilhamento',
-              icon: ShareIcon,
-              onClick: (item) => {
-                let url = ''
-
-                if (get(item, 'isExternal', false) === true) {
-                  url = get(item, 'url', '')
-                } else {
-                  url = 'localhost/certificado?code=' + get(item, 'code')
-                }
-
-                navigator.clipboard.writeText(url);
-                window.snackbar.warn("Link de compartilhamento copiado")
-              }
-            },
-            {
               tooltip: 'Excluir',
               icon: DeleteIcon,
               onClick: (item) => {

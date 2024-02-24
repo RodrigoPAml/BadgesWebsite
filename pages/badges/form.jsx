@@ -67,7 +67,7 @@ class FormContainer extends FormStore {
             onChange={(e) => { this.setValue(e.target.id, e.target.value) }}
             margin="normal"
           />
-              <TextField
+          <TextField
             id="learningDescription"
             label={this.getField('learningDescription', 'name')}
             value={this.getField('learningDescription', 'value')}
@@ -209,7 +209,7 @@ class FormContainer extends FormStore {
           this.state.activeStep === 0 ? this.renderForm() : <></>
         }
         {
-          this.state.activeStep === 1 ? this.renderCompetences() : <></>
+          this.state.activeStep === 1 && !isEmpty(toString(this.getField('id', 'value'))) ? this.renderCompetences() : <></>
         }
         {
           this.state.activeStep === 2 ? this.renderQuizes() : <></>
@@ -223,10 +223,11 @@ class FormContainer extends FormStore {
             onClick={() => {
               this.submit().then((response) => {
                 if (get(response, 'success', false)) {
-                  this.setState({ activeStep: 1 })
-                  if (!this.state.update) {
-                    this.setValue('id', toNumber(get(response, 'content', 0)))
-                  }
+                  this.setState({ activeStep: 1 }, () => {
+                    if (!this.state.update) {
+                      this.setValue('id', toNumber(get(response, 'content', 0)))
+                    }
+                  })
                 }
               });
             }}

@@ -15,6 +15,11 @@ const Store = [
     required: true,
   },
   {
+    name: 'Email',
+    id: 'email',
+    required: false,
+  },
+  {
     name: 'Url',
     id: 'url',
     required: true,

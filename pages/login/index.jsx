@@ -8,7 +8,6 @@ import { GetStorage, SetStorage } from '../../components/infra/storage';
 import { Avatar, Button, TextField, Grid, Box, Container, Typography, Card, Link, InputAdornment, IconButton, CircularProgress } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import HelpContainer from './help';
 import WarningIcon from '@mui/icons-material/Warning';
 
 class SignIn extends FormStore {
@@ -100,7 +99,7 @@ class SignIn extends FormStore {
                   fullWidth
                   onChange={(e) => { this.setValue(e.target.id, e.target.value) }}
                   id="login"
-                  label="Login"
+                  label="Login/Email"
                   inputProps={{ maxLength: 64 }}
                   autoComplete="login"
                   autoFocus
@@ -161,17 +160,7 @@ class SignIn extends FormStore {
                 </Button>
                 <Grid container>
                   <Grid item xs>
-                    <Link onClick={() => {
-                      const dialogId = window.openDialog({
-                        title: 'Esqueceu a senha?',
-                        container: HelpContainer,
-                        onClose: () => {
-                          window.closeDialog(dialogId)
-                        }
-                      })
-                    }
-                    }
-                    >
+                  <Link href='/recovery'>
                       Esqueceu a senha?
                     </Link>
                   </Grid>

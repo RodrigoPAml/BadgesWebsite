@@ -4,7 +4,7 @@ import Store from '../../components/stores/quizes/formStore'
 import FormStore from '../../components/infra/formStore'
 import Selector from '../../components/selector'
 import { GetPagedBadges } from '../../services/Badges';
-import { get, toString, toNumber } from 'lodash'
+import { get, toString, toNumber, isEmpty } from 'lodash'
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import { UpdateQuiz, CreateQuiz } from '../../services/Quizes'
 import Questions from '../questions'
@@ -147,7 +147,7 @@ class FormContainer extends FormStore {
           this.state.activeStep === 0 ? this.renderForm() : <></>
         }
         {
-          this.state.activeStep === 1 ? this.renderQuestions() : <></>
+          this.state.activeStep === 1 && !isEmpty(toString(this.getField("id", "value"))) ? this.renderQuestions() : <></>
         }
         <Box sx={{ display: 'flex', justifyContent: 'flex-end', m: '10px' }}>
           <Button
@@ -155,10 +155,11 @@ class FormContainer extends FormStore {
             onClick={() => {
               this.submit().then((response) => {
                 if (get(response, 'success', false)) {
-                  this.setState({ activeStep: 1 })
-                  if (!this.state.update) {
-                    this.setValue('id', toNumber(get(response, 'content', 0)))
-                  }
+                  this.setState({ activeStep: 1 }, () => {
+                    if (!this.state.update) {
+                      this.setValue('id', toNumber(get(response, 'content', 0)))
+                    }
+                  })
                 }
               });
             }}

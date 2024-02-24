@@ -100,18 +100,22 @@ class FormContainer extends FormStore {
           this.state.activeStep === 0 ? this.renderForm() : <></>
         }
         {
-          this.state.activeStep === 1 ? this.renderBadges() : <></>
+          this.state.activeStep === 1 && !isEmpty(toString(this.getField('id', 'value'))) ? this.renderBadges() : <></>
         }
         <Box sx={{ display: 'flex', justifyContent: 'flex-end', m: '10px' }}>
           <Button
             disabled={!this.isValid() || this.isLoading() || this.state.activeStep !== 0}
             onClick={() => {
               this.submit().then((response) => {
-                if (get(response, 'success', false)) {
-                  this.setState({ activeStep: 1 })
-                  if (!this.state.update) {
-                    this.setValue('id', toNumber(get(response, 'content', 0)))
-                  }
+                if (get(response, 'success', false) === true) {
+                  this.setState({
+                    ...this.state,
+                    activeStep: 1
+                  }, () => {
+                    if (!this.state.update) {
+                      this.setValue('id', toNumber(get(response, 'content', 0)))
+                    }
+                  })
                 }
               });
             }}

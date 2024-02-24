@@ -3,9 +3,9 @@ import { Card, TextField, Button, Box, Avatar, Typography, CircularProgress, Gri
 import Store from '../../components/stores/user/store'
 import { SetStorage } from '../../components/infra/storage'
 import FormStore from '../../components/infra/formStore'
-import { get } from 'lodash'
+import { get, isEmpty, trim } from 'lodash'
 import ImageUpload from '../../components/imageUpload'
-import { UpdateMyUser, GetMyUser, UpdateMyUserPassword } from '../../services/Users'
+import { UpdateMyUser, GetMyUser, UpdateMyUserPassword, UpdateMyUserEmail } from '../../services/Users'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -132,6 +132,46 @@ class User extends FormStore {
                 margin="normal"
               />
               <TextField
+                id="email"
+                label={this.getField('email', 'name')}
+                value={this.getField('email', 'value')}
+                fullWidth={false}
+                required={false}
+                type={'text'}
+                onChange={(e) => { this.setValue(e.target.id, e.target.value) }}
+                margin="normal"
+                sx={{ ml: '10px', mr: '10px', minWidth: '200px', maxWidth: '600px' }}
+                helperText={"Até 360 caracteres"}
+                InputProps={{
+                  endAdornment: (
+                    <>
+                      <Button
+                        variant='contained'
+                        color='warning'
+                        sx={{ m: '5px', height: '34px', minWidth: '83px', borderRadius: 20 }}
+                        onClick={() => {
+                          if (isEmpty(trim(this.getField('email', 'value')))) {
+                            window.snackbar.error("Informe o email")
+                            return
+                          }
+
+                          UpdateMyUserEmail(this.getField('email', 'value'))
+                            .then((request) => {
+                              if (get(request, 'success', false) === true) {
+                                window.snackbar.success(get(request, 'message'))
+                              } else {
+                                window.snackbar.error(get(request, 'message'))
+                              }
+                            }).catch(() => window.snackbar.error("Erro interno, por favor tente mais tarde"))
+                        }}
+                      >
+                        APLICAR
+                      </Button>
+                    </>
+                  )
+                }}
+              />
+              <TextField
                 id="newPassword"
                 label={this.getField('newPassword', 'name')}
                 value={this.getField('newPassword', 'value')}
@@ -161,9 +201,14 @@ class User extends FormStore {
                       }
                       <Button
                         variant='contained'
-                        color='info'
+                        color='warning'
                         sx={{ m: '5px', height: '34px', minWidth: '83px', borderRadius: 20 }}
                         onClick={() => {
+                          if (isEmpty(trim(this.getField('newPassword', 'value')))) {
+                            window.snackbar.error("Informe a senha")
+                            return
+                          }
+
                           UpdateMyUserPassword(this.getField('newPassword', 'value'))
                             .then((request) => {
                               if (get(request, 'success', false) === true) {

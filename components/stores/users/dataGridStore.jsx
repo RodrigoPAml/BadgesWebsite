@@ -19,6 +19,11 @@ const DataGridStore = [
     sortable: true
   },
   {
+    id: 'email',
+    name: 'Email',
+    sortable: true
+  },
+  {
     id: 'url',
     name: 'URL',
     sortable: true

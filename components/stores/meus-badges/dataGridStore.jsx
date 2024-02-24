@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Avatar, Tooltip, Chip, Link } from '@mui/material';
+import { Typography, Avatar, Tooltip, Button, Link } from '@mui/material';
 import { get } from 'lodash'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -99,6 +99,30 @@ const DataGridStore = [
     align: 'center',
     headerAlign: 'center',
     width: 70,
+  },
+  {
+    id: 'badgeId3',
+    name: 'Compartilhar Badge',
+    render: ({ item }) => {
+      return <Button variant='contained' color='warning' onClick={() => {
+        let url = ''
+
+        if (get(item, 'isExternal', false) === true) {
+          url = get(item, 'url', '')
+        } else {
+          url = 'http://localhost/certificado?code=' + get(item, 'code')
+        }
+
+        navigator.clipboard.writeText(url);
+        window.snackbar.warn("Link de compartilhamento copiado")
+      }}>
+        COPIAR LINK DE COMPARTILHAMENTO
+      </Button>
+    },
+    sortable: false,
+    align: 'center',
+    headerAlign: 'center',
+    minWidth: 230,
   },
 ];
 

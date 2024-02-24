@@ -27,11 +27,17 @@ class DataGridStore extends React.Component {
     let data = {
       pageSize: this.state.pageSize,
       page: this.state.page,
-      filters: encodeURIComponent(JSON.stringify(this.state.filters)),
+      filters: encodeURIComponent(JSON.stringify(this.state.filters.map((filter) => {
+        return {
+          operation: get(filter, 'operation'),
+          field: get(filter, 'field'),
+          value: get(filter, 'value'),
+        }
+      }))),
       orderBy: this.state.order === null ? '' : JSON.stringify(this.state.order),
     }
-    
-    if(!isEmpty(toString(this.state.params))) {
+
+    if (!isEmpty(toString(this.state.params))) {
       data = {
         ...data,
         ...this.state.params

@@ -19,15 +19,10 @@ function HelpContainer(props) {
           >
             <ErrorOutlineIcon color='info'></ErrorOutlineIcon>
             <Typography fontSize={{ lg: 14, md: 14, sm: 13, xs: 10 }} sx={{ ml: '10px' }} variant="h4">
-              Olá para recuperar sua senha contate o administrador do site
+              Parece que sua conta não tem um email cadastrado para que possamos recuperar sua conta, sendo assim
+              para recuperar sua senha contate o administrador do site
               em <Link href='https://www.eia.ai/contato'>https://www.eia.ai/contato</Link> e informe
-              o que aconteceu com o máximo de informação possível.
-            </Typography>
-          </Box>
-          <Box sx={{ ml: '10px', mb: '5px', display: 'flex', flexDirection: 'row', alignContent: 'center', justifyItems: 'center', alignItems: 'center' }}>
-            <ErrorOutlineIcon color='info'></ErrorOutlineIcon>
-            <Typography fontSize={{ lg: 15, md: 14, sm: 13, xs: 10 }} sx={{ ml: '10px' }} variant="h4">
-              Fazemos deste modo pois não podemos coletar informações como email e telefone.
+              o ocorrido para que cadastremos um novo endereço de email na sua conta.
             </Typography>
           </Box>
         </Box>

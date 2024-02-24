@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Button, TextField, Box, Container, Typography, Card, Avatar, InputAdornment, Tooltip, IconButton, CircularProgress } from '@mui/material';
+import { Button, TextField, Box, Container, Typography, Card, Avatar, InputAdornment, Tooltip, IconButton, CircularProgress } from '@mui/material';
 import FormStore from '../../components/infra/formStore';
 import GetStore from '../../components/stores/signup/store'
 import { CreateUser } from '../../services/Users'
@@ -8,7 +8,6 @@ import ImageUpload from '../../components/imageUpload'
 import HelpIcon from '@mui/icons-material/Help';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import WarningIcon from '@mui/icons-material/Warning';
 
 class SignUp extends FormStore {
   constructor() {
@@ -99,19 +98,6 @@ class SignUp extends FormStore {
             </Typography>
             <Box sx={{ marginTop: 8, display: 'flex', flexDirection: 'column', alignItems: 'center', m: 2, pt: 3 }} >
               <Box component="form" sx={{ mt: 1 }}>
-                <Box sx={{
-                  width: '100%',
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  alignContent: "center",
-                  justifyContent: "center"
-                }}>
-                  <WarningIcon sx={{ mr: '10px' }} color='warning'></WarningIcon>
-                  <Typography color={"gray"} textAlign={"left"} component="h1" fontSize={17}>
-                    Não utilize seu email como login
-                  </Typography>
-                </Box>
                 <TextField
                   margin="normal"
                   required
@@ -122,7 +108,7 @@ class SignUp extends FormStore {
                   label="Login"
                   autoComplete="login"
                   autoFocus
-                  helperText="No mínimo 8 caracteres"
+                  helperText="No mínimo 6 caracteres"
                   inputProps={{ maxLength: 64 }}
                   InputProps={{
                     endAdornment: (
@@ -139,10 +125,33 @@ class SignUp extends FormStore {
                 <TextField
                   margin="normal"
                   required
+                  disabled={this.isLoading()}
+                  fullWidth
+                  onChange={(e) => { this.setValue(e.target.id, e.target.value) }}
+                  id="email"
+                  label="Email"
+                  autoComplete="email"
+                  autoFocus
+                  inputProps={{ maxLength: 64 }}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position='end'>
+                        <Tooltip title="Pode ser usado para a realização de Login e recuperar a senha!" >
+                          <Avatar sx={{ color: 'rgba(1, 1, 1, 0.3)', bgcolor: 'transparent' }}>
+                            <HelpIcon ></HelpIcon>
+                          </Avatar>
+                        </Tooltip>
+                      </InputAdornment>
+                    )
+                  }}
+                />
+                <TextField
+                  margin="normal"
+                  required
                   fullWidth
                   onChange={(e) => { this.setValue(e.target.id, e.target.value) }}
                   id="name"
-                  label="Nome completo"
+                  label="Nome"
                   disabled={this.isLoading()}
                   autoFocus
                   inputProps={{ maxLength: 32 }}
@@ -164,7 +173,7 @@ class SignUp extends FormStore {
                   fullWidth
                   onChange={(e) => { this.setValue(e.target.id, e.target.value) }}
                   id="password"
-                  helperText="No mínimo 10 caracteres"
+                  helperText="No mínimo 8 caracteres"
                   type={this.state.showPassword ? 'text' : 'password'}
                   label="Senha"
                   disabled={this.isLoading()}

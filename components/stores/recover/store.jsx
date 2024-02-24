@@ -12,8 +12,8 @@ const GetStore = [
     required: true
   },
   {
-    name: 'Email',
-    id: 'email',
+    name: 'Login ou Email',
+    id: 'login',
     value: '',
     required: true
   },
@@ -21,7 +21,7 @@ const GetStore = [
     name: 'Código de Renovação de Senha',
     id: 'emailCode',
     value: '',
-    required: true
+    required: false
   },
 ]
 

@@ -81,7 +81,6 @@ class Courses extends React.Component {
                   containerProps: { update: false },
                   onClose: (reload = false) => {
                     window.closeDialog(dialogId)
-
                     if (reload === true) {
                       this.grid.current.fetch()
                     }

@@ -5,7 +5,7 @@ import FormStore from '../../components/infra/formStore'
 import { get, toString } from 'lodash'
 import UserBadges from '../user-badges'
 import ImageUpload from '../../components/imageUpload'
-import { UpdateUser, GetImageFromId, ChangePassword } from '../../services/Users'
+import { UpdateUser, GetImageFromId, ChangePassword, ChangeEmail } from '../../services/Users'
 
 class FormContainer extends FormStore {
   constructor(props) {
@@ -52,6 +52,17 @@ class FormContainer extends FormStore {
           id="login"
           label={this.getField('login', 'name')}
           value={this.getField('login', 'value')}
+          disabled={true}
+          fullWidth={false}
+          required
+          sx={{ ml: '10px', mr: '10px', minWidth: '400px' }}
+          onChange={(e) => { this.setValue(e.target.id, e.target.value) }}
+          margin="normal"
+        />
+        <TextField
+          id="email"
+          label={this.getField('email', 'name')}
+          value={this.getField('email', 'value')}
           disabled={true}
           fullWidth={false}
           required
@@ -184,10 +195,43 @@ class FormContainer extends FormStore {
                         window.snackbar.error(get(request, 'message'))
                       }
                     }).catch(() => window.snackbar.error("Erro interno, por favor tente mais tarde"))
-
                 }}
               >
                 Trocar senha
+              </Button>
+            </Grid>
+          </Grid>
+          <Grid container direction={'row'} sx={{ ml: '10px', mr: '10px', }}>
+            <Grid item >
+              <TextField
+                id="email"
+                label={this.getField('email', 'name')}
+                value={this.getField('email', 'value')}
+                fullWidth={false}
+                required={false}
+                sx={{ minWidth: '400px' }}
+                onChange={(e) => { this.setValue(e.target.id, e.target.value) }}
+                margin="normal"
+                inputProps={{ maxLength: 360 }}
+              />
+            </Grid>
+            <Grid item>
+              <Button
+                variant='contained'
+                color='error'
+                sx={{ ml: '10px', mt: '23px' }}
+                onClick={() => {
+                  ChangeEmail(this.props.item.id, this.getField('email', 'value'))
+                    .then((request) => {
+                      if (get(request, 'success', false) === true) {
+                        window.snackbar.success(get(request, 'message'))
+                      } else {
+                        window.snackbar.error(get(request, 'message'))
+                      }
+                    }).catch(() => window.snackbar.error("Erro interno, por favor tente mais tarde"))
+                }}
+              >
+                Trocar Email
               </Button>
             </Grid>
           </Grid>
