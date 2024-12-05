@@ -33,13 +33,13 @@ const GetImageFromId = async (id) => {
 }
 
 const ChangePassword = async (id, newPassword) => {
-  const { data } = await api.get('/User/UpdateUserPassword?id=' + id + "&newPassword=" + newPassword, getConfig())
+  const { data } = await api.post('/User/UpdateUserPassword', JSON.stringify({ id, newPassword }), getConfig())
 
   return data;
 }
 
 const UpdateMyUserPassword = async (newPassword) => {
-  const { data } = await api.get('/User/UpdateMyUserPassword/' + newPassword, getConfig())
+  const { data } = await api.post('/User/UpdateMyUserPassword/', JSON.stringify({ newPassword }), getConfig())
 
   return data;
 }
