@@ -1,8 +1,8 @@
 # Badges Website
 
-A website builded in NextJS and MUI with badge/certificate emission and quiz system and available in https://certificados.eia.ai/
+A website builded in NextJS and MUI with badge/certificate emission and quiz system.
 
-One of my first websites
+My first websites
 
 * Contains the administrative part
 * Quiz system to adquire badges
