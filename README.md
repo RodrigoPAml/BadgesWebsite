@@ -2,9 +2,9 @@
 
 A website builded in NextJS and MUI with badge/certificate emission and quiz system.
 
-My first websites
+My first website with:
 
-* Contains the administrative part
+* Administrative part
 * Quiz system to adquire badges
 * Unique profile page
 * Badge certification page that can be shared via social media
